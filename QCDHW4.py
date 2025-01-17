@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import scipy.integrate as spi
 
 def dGammaChiral(m12sq):
@@ -9,8 +8,8 @@ def dGammaChiral(m12sq):
 def int1(m12sq, matel):
     E2 = 1 / 2 * np.sqrt(m12sq)
     E3 = (m_etaprime**2 - m12sq - m_eta**2) / (2*np.sqrt(m12sq))
-    m23sqmin = (E2 + E3)**2 - (np.sqrt(E2**2 - m_pi**2) + np.sqrt(E3**2 - m_pi**2))
-    m23sqmax = (E2 + E3)**2 - (np.sqrt(E2**2 - m_pi**2) - np.sqrt(E3**2 - m_pi**2))
+    m23sqmin = (E2 + E3)**2 - (np.sqrt(E2**2 - m_pi**2) + np.sqrt(E3**2 - m_eta**2))**2
+    m23sqmax = (E2 + E3)**2 - (np.sqrt(E2**2 - m_pi**2) - np.sqrt(E3**2 - m_eta**2))**2
     return (m23sqmax - m23sqmin) * matel(m12sq)
 
 
